@@ -30,7 +30,7 @@
                 <br />
 
                 <div>
-                    <h1>GMS TRAVEL</h1>
+                    <h1>Gizzabre</h1>
                     <p>Copyright ©{{ now()->format('Y') }}.</p>
                 </div>
             </div>
