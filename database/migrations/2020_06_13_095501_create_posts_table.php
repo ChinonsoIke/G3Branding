@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->string("video")->nullable();
             $table->string("document")->nullable();
             $table->string("author")->nullable();
-            $table->string("p_content");
+            $table->longText("p_content");
             $table->string("has_parent")->nullable();
             $table->string("parent_id")->nullable();
             $table->string("target")->nullable();
