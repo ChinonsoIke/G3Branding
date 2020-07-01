@@ -39,6 +39,12 @@
                         <a href="{{ route('admin.users.index') }}"><i class="fa fa-users"></i> Users </a>
                     </li>
                 @endif
+                <li>
+                    <a href="{{ route('admin.orders.index') }}"><i class="fa fa-shopping-basket"></i> Orders </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.categories.index') }}"><i class="fa fa-tasks"></i> Categories </a>
+                </li>
                 @if (auth()->user()->hasPermissionTo('privilege-management'))
                     <li>
                         <a href="{{ route('admin.role.index') }}"><i class="fa fa-lock"></i> Roles & Permission </a>
