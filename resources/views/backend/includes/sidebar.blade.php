@@ -55,10 +55,15 @@
                         <ul class="nav child_menu">
                             @if (auth()->user()->hasPermissionTo('posts-management'))
                                 <li><a href="{{ route('admin.posts.index') }}">Posts</a></li>
+                                
                             @endif
+                            <li><a href="{{ route('admin.categories.index') }}">Categories</a></li>
                             @if (auth()->user()->hasPermissionTo('pages-management'))
                                 <li><a href="{{ route('admin.pages.index') }}">Pages</a> </li>
                             @endif
+                            @if (auth()->user()->hasPermissionTo('pages-management'))
+                            <li><a href="{{ route('admin.sliders.index') }}">Sliders</a> </li>
+                        @endif
                         </ul>
                     </li>
                 @endif

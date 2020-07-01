@@ -362,7 +362,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="block-title-w">
+						@inlineEditor('home_now_to_make_print_title')
 						<h2 class="block-title">HOW WE MAKE PRINTING AS EASY</h2> 
+						@endInlineEditor
 						<span class="icon-title">
 							<span></span>
 							<i class="fa fa-star"></i>
@@ -376,13 +378,19 @@
 									<i class="fa fa-newspaper-o"></i>
 								</div>
 								<div class="print-title">
+									@inlineEditor('home_print_1_title')
 									<a href="#">Select Options</a>
+									@endInlineEditor
 								</div>
 								<div class="print-number">
+									@inlineEditor('home_print_1_number')
 									<span>01</span>
+									@endInlineEditor
 								</div>
 								<div class="print-txt">
+									@inlineEditor('home_print_1_text')
 									<p>Choose options that you want for your prints.We will make you happy with your choices.</p>
+									@endInlineEditor
 								</div>
 							</div>
 						</div>
@@ -393,13 +401,19 @@
 									<i class="fa fa-arrow-circle-o-up"></i>
 								</div>
 								<div class="print-title">
-									<a href="#">Upload your design</a>
+									@inlineEditor('home_print_2_title')
+									<a href="#">Select Options</a>
+									@endInlineEditor
 								</div>
 								<div class="print-number">
+									@inlineEditor('home_print_2_number')
 									<span>02</span>
+									@endInlineEditor
 								</div> 
 								<div class="print-txt">
+									@inlineEditor('home_print_2_text')
 									<p>Upload your finished design here and we'll print it for you with your choices</p>
+									@endInlineEditor
 								</div>
 							</div>
 						</div>
@@ -409,13 +423,19 @@
 									<i class="fa fa-shopping-cart"></i>
 								</div>
 								<div class="print-title">
+									@inlineEditor('home_print_3_title')
 									<a href="#">Checkout & Order</a>
+									@endInlineEditor
 								</div>
 								<div class="print-number">
+									@inlineEditor('home_print_3_number')
 									<span>03</span>
+									@endInlineEditor
 								</div> 
 								<div class="print-txt">
+									@inlineEditor('home_print_3_text')
 									<p>Checkout and finish your order very easy with one step checkout extension.</p>
+									@endInlineEditor
 								</div>
 							</div>
 						</div>
@@ -431,8 +451,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="block-title-w">
+						@inlineEditor('home_capabilities_title')
 						<h2 class="block-title">our capabilities</h2> 
+						@endInlineEditor
+						@inlineEditor('home_capabilities_sub_title')
 						<span class="sub-title">Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</span>
+						@endInlineEditor
 						<span class="icon-title">
 							<span></span>
 							<i class="fa fa-star"></i>
@@ -441,30 +465,46 @@
 					<div class="block-capabititie-w">
 						<div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
 							<div class="block-mydoughnut" id="myDoughnut"> </div>
+							@inlineEditor('home_capabilities_widget_1_title')
 							<h2 class="title">huge quantity</h2>
+							@endInlineEditor
 							<div class="decs">
-							<p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
+								@inlineEditor('home_capabilities_widget_1_desc')
+								<p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
+							@endInlineEditor
 							</div>
 						</div>
 						<div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
 							<div class="block-mydoughnut" id="myDoughnut2"> </div>
+							@inlineEditor('home_capabilities_widget_2_title')
 							<h2 class="title">on Time</h2>
+							@endInlineEditor
 							<div class="decs">
-							<p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
+								@inlineEditor('home_capabilities_widget_2_desc')
+								<p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
+								@endInlineEditor
 							</div>
 						</div>
 						<div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
 							<div class="block-mydoughnut" id="myDoughnut3"> </div>
-							<h2 class="title">True Color</h2>
+							@inlineEditor('home_capabilities_widget_3_title')
+							<h2 class="title">True color</h2>
+							@endInlineEditor
 							<div class="decs">
-							<p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
+								@inlineEditor('home_capabilities_widget_3_desc')
+								<p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
+								@endInlineEditor
 							</div>
 						</div>
 						<div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
 							<div class="block-mydoughnut" id="myDoughnut4"> </div>
+							@inlineEditor('home_capabilities_widget_4_title')
 							<h2 class="title">fast Delivery</h2>
+							@endInlineEditor
 							<div class="decs">
-							<p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
+								@inlineEditor('home_capabilities_widget_4_desc')
+								<p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
+								@endInlineEditor
 							</div>
 						</div>
 					</div>
@@ -476,77 +516,114 @@
 			<div class="container">
 				<div class="row">
 					<div class="block-title-w">
+						@inlineEditor('home_services_title')
 						<h2 class="block-title">our services</h2>
+						@endInlineEditor
 						<span class="icon-title">
 							<span></span>
 							<i class="fa fa-star"></i>
 						</span>
+						@inlineEditor('home_services_sub_title')
 						<span class="sub-title">Choose the design path that is right before upload file</span>
+						@endInlineEditor
 					</div>
 					<div class="or-service-w">
 						<div class="col-md-3 col-sm-6 col-xs-6 or-block">
 							<div class="or-image">
+								@inlineEditor( 'home_services_widget_1_thumb_image',null,null,null,null,null,true,'image' )
 								<a href="#">
 									<img src="images/our_service/1.png" alt="service-01"/>
 								</a>
+								@endInlineEditor
+								
 							</div>
 							<div class="or-title">
+								@inlineEditor( 'home_services_widget_1_link')
 								<a href="#">graphic Design</a>
+								@endInlineEditor
 							</div>
 							<div class="or-text">
+								@inlineEditor( 'home_services_widget_1_desc')
 								<p>
 									let us design your next print project!
 								</p>
+								@endInlineEditor
 							</div>
+							@inlineEditor( 'home_services_widget_1_btn')
 							<a href="#" class="btn-readmore order-now">Order now</a>
+							@endInlineEditor
 						</div>
 						<div class="col-md-3 col-sm-6 col-xs-6 or-block">
 							<div class="or-image">
+								@inlineEditor( 'home_services_widget_2_thumb_image',null,null,null,null,null,true,'image' )
 								<a href="#">
 									<img src="images/our_service/2.png" alt="service-02"/>
 								</a>
+								@endInlineEditor
 							</div>
 							<div class="or-title">
+								@inlineEditor( 'home_services_widget_2_link')
 								<a href="#">Mailing</a>
+								@endInlineEditor
 							</div>
 							<div class="or-text">
+								@inlineEditor( 'home_services_widget_2_desc')
 								<p>
 									Delivery, we can hand it all for you!
 								</p>
+								@endInlineEditor
 							</div>
+							@inlineEditor( 'home_services_widget_2_btn')
 							<a href="#" class="btn-readmore order-now">Order now</a>
+							@endInlineEditor
 						</div>
 						<div class="col-md-3 col-sm-6 col-xs-6 or-block">
 							<div class="or-image">
+								@inlineEditor( 'home_services_widget_3_thumb_image',null,null,null,null,null,true,'image' )
 								<a href="#">
 									<img src="images/our_service/3.png" alt="service-03"/>
 								</a>
+								@endInlineEditor
 							</div>
 							<div class="or-title">
+								@inlineEditor( 'home_services_widget_3_link')
 								<a href="#">custom prints</a>
+								@endInlineEditor
 							</div>
 							<div class="or-text">
+								@inlineEditor( 'home_services_widget_3_desc')
 								<p>
 									we'll bring all your creative ideas to life!
 								</p>
+								@endInlineEditor
 							</div>
+							@inlineEditor( 'home_services_widget_3_btn')
 							<a href="#" class="btn-readmore order-now">Order now</a>
+							@endInlineEditor
 						</div>
 						<div class="col-md-3 col-sm-6 col-xs-6 or-block">
 							<div class="or-image">
+								@inlineEditor( 'home_services_widget_4_thumb_image',null,null,null,null,null,true,'image' )
 								<a href="#">
 									<img src="images/our_service/4.png" alt="service-04"/>
 								</a>
+								@endInlineEditor
 							</div>
 							<div class="or-title">
+								@inlineEditor( 'home_services_widget_4_link')
 								<a href="#">free file check</a>
+								@endInlineEditor
 							</div>
 							<div class="or-text">
+								@inlineEditor( 'home_services_widget_4_desc')
 								<p>
 									we'll if your file is ready to print!
 								</p>
+								@endInlineEditor
 							</div>
+							@inlineEditor( 'home_services_widget_4_btn')
 							<a href="#" class="btn-readmore order-now">Order now</a>
+							@endInlineEditor
 						</div>
 					</div>
 				</div>

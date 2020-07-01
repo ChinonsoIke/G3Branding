@@ -58,6 +58,22 @@ Route::group(['middleware' => 'auth:admin'], function() {
         Route::get('delete/{post}', 'PostsController@delete')->name('delete');
     });
 
+    Route::group(['prefix' => 'sliders', 'as' => 'sliders.'], function () {
+        Route::get('', ['uses'=>'SlidersController@index'])->name("index");
+        Route::post('', ['uses'=>'SlidersController@store'])->name("store");
+        Route::get('edit/{id}', ['uses'=>'SlidersController@edit'])->name("edit");
+        Route::post('edit/{id}', ['uses'=>'SlidersController@update'])->name("update");
+        Route::post('delete/{id}', ['uses'=>'SlidersController@destroy'])->name("delete");
+    });
+    
+    Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
+        Route::get('', ['uses'=>'CategoriesController@index'])->name("index");
+        Route::post('', ['uses'=>'CategoriesController@store'])->name("store");
+        Route::get('edit/{id}', ['uses'=>'CategoriesController@edit'])->name("edit");
+        Route::post('edit/{id}', ['uses'=>'CategoriesController@update'])->name("update");
+        Route::post('delete/{id}', ['uses'=>'CategoriesController@destroy'])->name("delete");
+    });
+    
     //Roles and Permission
     Route::get('role','RolesController@index')->name('role.index');
     Route::post('role','RolesController@addRole')->name('role.store');

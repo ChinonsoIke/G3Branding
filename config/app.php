@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-
+        swatty007\LaravelInlineEditor\InlineEditorServiceProvider::class,
     ],
 
     /*
