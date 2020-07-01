@@ -26,6 +26,25 @@ Route::group(['middleware' => 'auth:admin'], function() {
         Route::get('details/{user}', 'UsersController@details')->name('details');
     });
 
+    //Category
+    Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
+        Route::get('', 'CategoryController@index')->name('index');
+        Route::post('create', 'CategoryController@create')->name('create');
+        Route::get('details/{category}', 'CategoryController@details')->name('details');
+        Route::post('update/{category}', 'CategoryController@update')->name('update');
+        Route::post('update-price', 'CategoryController@updatePrice')->name('update.price');
+        Route::post('create-price/{category}', 'CategoryController@createPrice')->name('create.price');
+        Route::get('delete-price/{id}', 'CategoryController@deletePrice')->name('delete.price');
+    });
+
+    //Order
+    Route::group(['prefix' => 'orders', 'as' => 'orders.'], function () {
+        Route::get('', 'OrderController@index')->name('index');
+        Route::get('details/{order}', 'OrderController@details')->name('details');
+        Route::get('update/order/{order}/status/{status}', 'OrderController@updateStatus')->name('update.status');
+    });
+
+
     //FAQ
     Route::group(['prefix' => 'faqs', 'as' => 'faqs.'], function () {
         Route::get('', 'FaqController@index')->name('index');
