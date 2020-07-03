@@ -1,5 +1,5 @@
 @extends('backend.layouts.default')
-@section('title', 'Categories')
+@section('title', 'Products')
 @push('custom-script')
     <script>
         $('.summernote').summernote({
@@ -13,7 +13,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Categories</h3>
+                <h3>Products</h3>
             </div>
 
             <div class="title_right">
@@ -33,66 +33,71 @@
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Category List</h2>
+                        <h2>Products List</h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
                         <ul class="nav nav-tabs bar_tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#list" role="tab" aria-controls="home" aria-selected="true">Category List</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#list" role="tab" aria-controls="home" aria-selected="true">Product List</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#add" role="tab" aria-controls="profile" aria-selected="false">Add Category</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#add" role="tab" aria-controls="profile" aria-selected="false">Add Product</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box table-responsive">
-                                    <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
-                                        <thead>
-                                        <tr>
-                                            <th>SN</th>
-                                            <th>Name</th>
-                                            <th>Products</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @forelse($categories as $category)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $category->title }}</td>
-                                                <td>
-                                                    @forelse($category->products as $product)
-                                                        [{{$loop->iteration}}] {{ $product->title }}@if(!$loop->last), @else. @endif
-                                                    @empty
-                                                        <p>No Product</p>
-                                                    @endforelse
-                                                </td>
-                                                <td><a href="{{ route('admin.categories.details', $category) }}" class="btn btn-sm btn-info">Details <i class="fa fa-arrow-right"></i></a> </td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td colspan="2"><button type="button" class="btn btn-default btn-block">No record found</button></td>
-                                            </tr>
-                                        @endforelse
-                                        </tbody>
-                                    </table>
+                                    <div class="col-sm-12">
+                                        <div class="card-box table-responsive">
+                                            <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
+                                                <thead>
+                                                <tr>
+                                                    <th>SN</th>
+                                                    <th>Title</th>
+                                                    <th>Categories</th>
+                                                    <th>Slug</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @forelse($products as $product)
+                                                    <tr>
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $product->title }}</td>
+                                                        <td>
+                                                            @forelse($product->categories as $category)
+                                                                [{{$loop->iteration}}] {{ $category->title }}@if(!$loop->last), @else. @endif
+                                                            @empty
+                                                                <p>No Category</p>
+                                                            @endforelse
+                                                        </td>
+                                                        <td>{{ $product->slug }}</td>
+                                                        <td><a href="{{ route('admin.products.details', $product) }}" class="btn btn-sm btn-info">Details <i class="fa fa-arrow-right"></i></a> </td>
+                                                    </tr>
+                                                @empty
+                                                    <tr>
+                                                        <td></td>
+                                                        <td><button type="button" class="btn btn-default btn-block">No record found</button></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                @endforelse
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            </div>
                             <div class="tab-pane fade show fade" id="add" role="tabpanel" aria-labelledby="home-tab">
-                                <form class="form-horizontal" enctype="multipart/form-data" method="post" action="{{ route('admin.categories.create') }}">
+                                <form class="form-horizontal" enctype="multipart/form-data" method="post" action="{{ route('admin.products.create') }}">
                                     @csrf
                                     <div class="form-group">
                                         <label class="col-form-label label-align" for="title"> Title <span class="required">*</span>
                                         </label><br/>
                                         <input type="text" id="title" name="title" value="{{ old('title') }}" required="required" class="form-control ">
                                         @error('title')
-                                            <span class="text-danger">{{ $message }}</span>
+                                        <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
@@ -104,14 +109,14 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-form-label label-align" for="products">Products
+                                        <label class="col-form-label label-align" for="categories">Categories
                                         </label>
                                         <div class="row">
-                                            @foreach($products as $product)
+                                            @foreach($categories as $category)
                                                 <div class="col-md-3">
                                                     <div class="checkbox">
                                                         <label>
-                                                            <input type="checkbox" @if($category->products->contains($product)) checked @endif name="products[]" class="flat" value="{{ $product->id }}"> {{ $product->title }}
+                                                            <input type="checkbox" name="categories[]" class="flat" value="{{ $category->id }}"> {{ $category->title }}
                                                         </label>
                                                     </div>
                                                 </div>

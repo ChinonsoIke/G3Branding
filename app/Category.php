@@ -10,14 +10,9 @@ class Category extends Model
     use SoftDeletes;
     protected $guarded = ['id'];
 
-    public function prices()
+    public function products()
     {
-        return $this->hasMany(CategoryPrice::class, 'category_id');
-    }
-
-    public function orders()
-    {
-        return $this->hasMany(Category::class);
+        return $this->belongsToMany(Product::class);
     }
 
     public function getImage()

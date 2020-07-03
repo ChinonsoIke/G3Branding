@@ -32,9 +32,19 @@ Route::group(['middleware' => 'auth:admin'], function() {
         Route::post('create', 'CategoryController@create')->name('create');
         Route::get('details/{category}', 'CategoryController@details')->name('details');
         Route::post('update/{category}', 'CategoryController@update')->name('update');
-        Route::post('update-price', 'CategoryController@updatePrice')->name('update.price');
-        Route::post('create-price/{category}', 'CategoryController@createPrice')->name('create.price');
-        Route::get('delete-price/{id}', 'CategoryController@deletePrice')->name('delete.price');
+    });
+
+    //Product
+    Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
+        Route::get('', 'ProductController@index')->name('index');
+        Route::post('create', 'ProductController@create')->name('create');
+        Route::get('details/{product}', 'ProductController@details')->name('details');
+        Route::post('update/{product}', 'ProductController@update')->name('update');
+        Route::get('delete/{product}', 'ProductController@delete')->name('delete');
+
+        Route::post('update-price', 'ProductController@updatePrice')->name('update.price');
+        Route::post('create-price/{product}', 'ProductController@createPrice')->name('create.price');
+        Route::get('delete-price/{id}', 'ProductController@deletePrice')->name('delete.price');
     });
 
     //Order
