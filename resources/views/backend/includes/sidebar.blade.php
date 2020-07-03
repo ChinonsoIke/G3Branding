@@ -40,10 +40,13 @@
                     </li>
                 @endif
                 <li>
-                    <a href="{{ route('admin.orders.index') }}"><i class="fa fa-shopping-basket"></i> Orders </a>
+                    <a href="{{ route('admin.products.index') }}"><i class="fa fa-shopping-cart"></i> Product </a>
                 </li>
                 <li>
                     <a href="{{ route('admin.categories.index') }}"><i class="fa fa-tasks"></i> Categories </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.orders.index') }}"><i class="fa fa-shopping-basket"></i> Orders </a>
                 </li>
                 @if (auth()->user()->hasPermissionTo('privilege-management'))
                     <li>

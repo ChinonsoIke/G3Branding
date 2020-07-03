@@ -30,21 +30,21 @@ class CategoryTableSeeder extends Seeder
         $categoryThree->save();
 
         $categoryOne->prices()->saveMany([
-            new App\CategoryPrice(['quantity' => '100', 'cost' => 1500]),
-            new App\CategoryPrice(['quantity' => '250', 'cost' => 2500]),
-            new App\CategoryPrice(['quantity' => '400+', 'cost' => 4500]),
+            new App\ProductPrice(['quantity' => '100', 'cost' => 1500]),
+            new App\ProductPrice(['quantity' => '250', 'cost' => 2500]),
+            new App\ProductPrice(['quantity' => '400+', 'cost' => 4500]),
         ]);
 
         $categoryTwo->prices()->saveMany([
-            new App\CategoryPrice(['quantity' => '150', 'cost' => 2500]),
-            new App\CategoryPrice(['quantity' => '220', 'cost' => 2600]),
-            new App\CategoryPrice(['quantity' => '500+', 'cost' => 5000]),
+            new App\ProductPrice(['quantity' => '150', 'cost' => 2500]),
+            new App\ProductPrice(['quantity' => '220', 'cost' => 2600]),
+            new App\ProductPrice(['quantity' => '500+', 'cost' => 5000]),
         ]);
 
         $categoryThree->prices()->saveMany([
-            new App\CategoryPrice(['quantity' => '80', 'cost' => 700]),
-            new App\CategoryPrice(['quantity' => '120', 'cost' => 1500]),
-            new App\CategoryPrice(['quantity' => '300+', 'cost' => 2000]),
+            new App\ProductPrice(['quantity' => '80', 'cost' => 700]),
+            new App\ProductPrice(['quantity' => '120', 'cost' => 1500]),
+            new App\ProductPrice(['quantity' => '300+', 'cost' => 2000]),
         ]);
     }
 }

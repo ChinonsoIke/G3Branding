@@ -109,7 +109,7 @@
 <script src="{{ asset('admin/vendors/moment/min/moment.min.js') }}"></script>
 <script src="{{ asset('admin/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
 <!-- Custom Theme Scripts -->
-<script src="{{ asset('admin/build/js/custom.min.js') }}"></script>
+<script src="{{ asset('admin/build/js/custom.js') }}"></script>
 <script src="{{ asset('admin/build/js/custom-v2.js') }}"></script>
 
 @stack('custom-script')

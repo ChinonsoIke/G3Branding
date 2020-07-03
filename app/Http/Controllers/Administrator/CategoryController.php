@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Administrator;
 
 use App\Category;
-use App\CategoryPrice;
+use App\Product;
+use App\ProductPrice;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Image;
@@ -13,12 +14,14 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('id', 'desc')->get();
-        return view('backend.categories.index', compact('categories'));
+        $products = Product::orderBy('id', 'desc')->get();
+        return view('backend.categories.index', compact('categories', 'products'));
     }
 
     public function details(Category $category)
     {
-        return view('backend.categories.details', compact('category'));
+        $products = Product::orderBy('id', 'desc')->get();
+        return view('backend.categories.details', compact('category', 'products'));
     }
 
     public function update(Request $request, Category $category)
@@ -29,11 +32,15 @@ class CategoryController extends Controller
             'image' => 'nullable|image'
         ]);
         if ($request->hasFile('image')) {
+            if (file_exists('uploads/categories/' . $category->image)) {
+                unlink('uploads/categories/' . $category->image);
+            }
             $fileName = time() . '.' . $request->file('image')->getClientOriginalExtension();
             Image::make($request->file('image'))->save('uploads/categories/' . $fileName);
             $data['image'] = $fileName;
         }
         $category->update($data);
+        $category->products()->sync($request->products);
         return back()->with('success', 'Category updated successfully');
     }
 
@@ -50,33 +57,8 @@ class CategoryController extends Controller
             $data['image'] = $fileName;
         }
         $category = Category::create($data);
+        $category->products()->sync($request->products);
         return redirect(route('admin.categories.details', $category))->with('success', 'Category added successfully');
     }
 
-    public function updatePrice(Request $request)
-    {
-        $categoryPrice = CategoryPrice::findOrFail($request->pk);
-        $field = $request->name;
-        $categoryPrice->$field = $request->value;
-        $categoryPrice->save();
-        return true;
-    }
-
-    public function createPrice(Request $request, Category $category)
-    {
-        $data = $this->validate($request, [
-           'quantity' => 'required',
-           'cost' => 'required|numeric'
-        ]);
-
-        $category->prices()->create($data);
-
-        return back()->with('success', 'Price added successfully');
-    }
-
-    public function deletePrice(Request $request)
-    {
-        CategoryPrice::destroy($request->id);
-        return back()->with('success', 'Price deleted successfully');
-    }
 }
