@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+    $categories = 
     return view('index');
 })->name('index');
 
