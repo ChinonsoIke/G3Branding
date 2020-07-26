@@ -96,11 +96,11 @@ Route::group(['middleware' => 'auth:admin'], function() {
     });
     
     Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
-        Route::get('', ['uses'=>'CategoriesController@index'])->name("index");
-        Route::post('', ['uses'=>'CategoriesController@store'])->name("store");
-        Route::get('edit/{id}', ['uses'=>'CategoriesController@edit'])->name("edit");
-        Route::post('edit/{id}', ['uses'=>'CategoriesController@update'])->name("update");
-        Route::post('delete/{id}', ['uses'=>'CategoriesController@destroy'])->name("delete");
+        Route::get('', ['uses'=>'CategoryController@index'])->name("index");
+        Route::post('', ['uses'=>'CategoryController@store'])->name("store");
+        Route::get('edit/{id}', ['uses'=>'CategoryController@edit'])->name("edit");
+        Route::post('edit/{id}', ['uses'=>'CategoryController@update'])->name("update");
+        Route::post('delete/{id}', ['uses'=>'CategoryController@destroy'])->name("delete");
     });
     
     //Roles and Permission

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameCategoryPricesTable extends Migration
+class CreateProductPricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,14 @@ class RenameCategoryPricesTable extends Migration
      */
     public function up()
     {
-        //Schema::rename('category_prices', 'product_prices');
+        Schema::create('product_prices', function (Blueprint $table) {
+            
+            $table->id();
+            $table->string('quantity');
+            $table->decimal('cost',15,2);
+            $table->integer('category_id');
+            $table->timestamps();
+        });
     }
 
     /**

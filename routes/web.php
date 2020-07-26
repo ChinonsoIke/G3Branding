@@ -12,9 +12,15 @@
 */
 
 Route::get('/', function () {
-    $categories = 
-    return view('index');
+    $categories = App\Category::all();
+    $posts = App\Post::all()->take(4);
+    return view('index',compact('categories','posts'));
 })->name('index');
+
+Route::get('/about', 'AboutController@index')->name('about');
+Route::get('/contact', 'AboutController@index')->name('contact');
+Route::get('products', 'ProductController@categoryindex')->name('products');
+Route::get('products/{id}/details', 'ProductController@productdetails')->name('productsdetails');
 
 
 Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')

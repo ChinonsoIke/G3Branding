@@ -10,60 +10,24 @@
 		<section class="home-category">
 			<div class="container">
 				<div class="row"> 
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-left">
-						<a href="#" class="image">
-							<img src="images/banner/category/1.jpg" alt="banner-category"/>
-						</a>
-						<div class="info">
-							<a href="#">CANVAS PRINT</a>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 block block-center">
-						<div class="inner-top">
-							<div class="box-left">
-								<a href="#" class="image frist">
-									<img src="images/banner/category/2.jpg" alt="banner-category"/>
-								</a>
-								<div class="info">
-									<a href="#">BROCHURE</a>
-								</div>
-							</div>
-							<div class="box-right">
-								<a href="#" class="image">
-									<img src="images/banner/category/3.jpg" alt="banner-category"/>
-								</a>
-								<div class="info">
-									<a href="#">BUSINESS CARD</a>
-								</div>
-							</div>
-						</div>
-						<div class="inner-bottom">
+					@php
+						$count = 0;
+					@endphp
+					@if (count($categories) >= 4)
+					
+						@foreach ($categories as $item)
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-left">
 							<a href="#" class="image">
-								<img src="images/banner/category/4.jpg" alt="banner-category"/>
+								<img src="uploads/categories/{{$item->image}}" alt="banner-category"/>
 							</a>
 							<div class="info">
-								<a href="#">LOGO PRINT</a>
+								<a href="#">{{$item->title}}</a>
 							</div>
 						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-right">
-						<div class="inner-top">
-							<a href="#" class="image">
-								<img src="images/banner/category/5.jpg" alt="banner-category"/>
-							</a>
-							<div class="info">
-								<a href="#">ENVELOPE</a>
-							</div>
-						</div>
-						<div class="inner-bottom">
-							<a href="#" class="image">
-								<img src="images/banner/category/6.jpg" alt="banner-category"/>
-							</a>
-							<div class="info">
-								<a href="#">COVER  PRINT</a>
-							</div>
-						</div>
-					</div> 
+						@endforeach
+						
+				
+					@endif
 				</div>
 			</div>
 		</section>
@@ -130,6 +94,8 @@
 						<div class="slider">
 							<div class="slider-inner">
 								<div class="wrap-item"> 
+									@if ($posts)
+									@foreach ($posts as $item)
 									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
 										<div class="inner"> 
 											<a class="image" href="#">
@@ -137,220 +103,22 @@
 											</a>
 											<div class="info">
 												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
+													<a href="#">{{$item->title}}</a>
 												</div>
 												<div class="sub-title">
 													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
+														{{$item->slug()}}
 													</p>
 												</div>
 												<a href="#" class="read-more">Read more</a>
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-										<div class="inner">
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-											<a class="image" href="#">
-												<img src="images/blog/2.jpg" alt="blog-01"/>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-										<div class="inner">
-											<a class="image" href="#">
-												<img src="images/blog/3.jpg" alt="blog-01"/>
-											</a>
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-										<div class="inner">
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-											<a class="image" href="#">
-												<img src="images/blog/4.jpg" alt="blog-01"/>
-											</a>
-										</div>
-									</div>
+									@endforeach
+									@endif
+									
 								</div>
-								<div class="wrap-item"> 
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-										<div class="inner"> 
-											<a class="image" href="#">
-												<img src="images/blog/1.jpg" alt="blog-01"/>
-											</a>
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-										<div class="inner">
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-											<a class="image" href="#">
-												<img src="images/blog/2.jpg" alt="blog-01"/>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-										<div class="inner">
-											<a class="image" href="#">
-												<img src="images/blog/3.jpg" alt="blog-01"/>
-											</a>
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-										<div class="inner">
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-											<a class="image" href="#">
-												<img src="images/blog/4.jpg" alt="blog-01"/>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="wrap-item"> 
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-										<div class="inner"> 
-											<a class="image" href="#">
-												<img src="images/blog/1.jpg" alt="blog-01"/>
-											</a>
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-										<div class="inner">
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-											<a class="image" href="#">
-												<img src="images/blog/2.jpg" alt="blog-01"/>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-										<div class="inner">
-											<a class="image" href="#">
-												<img src="images/blog/3.jpg" alt="blog-01"/>
-											</a>
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-										<div class="inner">
-											<div class="info">
-												<div class="title">
-													<a href="#">Happy Holidays Photo Cards</a>
-												</div>
-												<div class="sub-title">
-													<p>
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
-											</div>
-											<a class="image" href="#">
-												<img src="images/blog/4.jpg" alt="blog-01"/>
-											</a>
-										</div>
-									</div>
-								</div> 
+								
 							</div>
 						</div>
 					</div>
@@ -629,7 +397,7 @@
 				</div>
 			</div>
 		</section>
-		<!--Home out recent : Begin -->
+		{{--<!--Home out recent : Begin -->
 		<section class="home-out-recent">
 			<div class="container">
 				<div class="row">
@@ -1535,7 +1303,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>--}}
 		<!--Home Testimonials : Begin -->
 		<section class="home-testimonial">
 			<div class="container">

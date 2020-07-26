@@ -14,7 +14,7 @@ class RenameCategoryIdToProductIdOnProductPricesTable extends Migration
     public function up()
     {
         Schema::table('product_prices', function (Blueprint $table) {
-            $table->renameColumn('category_id', 'product_id');
+            //$table->renameColumn('category_id', 'product_id');
         });
     }
 
