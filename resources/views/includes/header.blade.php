@@ -4,112 +4,12 @@
         <div class="container">
             <div class="row">
                 <div class="top-links col-lg-7 col-md-6 col-sm-5 col-xs-6">
-                    <ul>
-                        <li class="visible-md visible-lg">
-                            <a href="myaccount-dashboard.html">
-                                <i class="fa fa-lock"></i>
-                                <!-- Account -->
-                            </a>
-                        </li>
-                        <li class="visible-md visible-lg">
-                            <a href="wishlist.html">
-                                <i class="fa fa-heart"></i>
-                                <!-- Wishlist -->
-                            </a>
-                        </li>
-                        <li>
-                            <a href="login.html">
-                                <i class="fa fa-user"></i>
-                                <!-- Login -->
-                            </a>
-                        </li>
-                        <li class="hidden-xs">
-                            <a href="register.html">
-                                <i class="fa fa-pencil"></i>
-                                <!-- Sign Up -->
-                            </a>
-                        </li>
-                        <li class="hidden-xs">
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>
-                                <!-- Connect with facebook -->
-                            </a>
-                        </li>
-                        <li class="hidden-xs">
-                            <a href="#">
-                                <i class="fa fa-twitter"></i> 
-                            </a>
-                        </li>
-                        <li class="hidden-xs">
-                            <a href="#">
-                                <i class="fa fa-pinterest"></i> 
-                            </a>
-                        </li> 
-                        <li class="hidden-xs">
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
                 <div class="top-header-right f-right col-lg-5 col-md-6 col-sm-7 col-xs-6">
-                    <div class="w-header-right">
-                        <div class="block-currency">
-                            <div class="currency-active">
-                                <span class="currency-name">
-                                    currency:<span> usd</span><i class="fa fa-angle-down"></i>
-                                </span>
-                            </div>
-                            <ul>
-                                <li>
-                                    <a href="#" title="Select currency japan">
-                                        <span>JPY</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Select currency japan">
-                                        <span>Euro</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Select currency japan">
-                                        <span>Pound St.</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="language-w clearfix">
-                            <div class="language-active">
-                                <span class="language-name">Language: <span>English</span><i class="fa fa-angle-down"></i>
-</span>
-                            </div>
-                            <ul>
-                                <li>
-                                    <a href="#" title="Select Australia language">
-                                        <span>Australia</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Select Japan language">
-                                        <span>Japan</span>
-                                    </a> 
-                                </li>
-                                <li>
-                                    <a href="#" title="Select France language">
-                                        <span>France</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div> 
-                        <div class="th-hotline">
-                            <i class="fa fa-phone"></i>
-                            <span>1.866.614.8002</span>
-                        </div> 
-                    </div>
                 </div>
             </div>
         </div>
-    </section><!--Top Header: End-->
+    </section> <!-- Top Header: End -->
     <!--Main Header: Begin-->
     <section class="main-header">
         <div class="container">
@@ -117,7 +17,7 @@
                 <div class="col-lg-4 col-md-2 col-sm-4 col-xs-5 w-logo">
                     <div class="logo hd-pd ">
                     <a href="{{url('')}}">
-                            <img src="images/logo.png" alt="printshop logo">
+                            <img src="{{asset('images/logo.png')}}" alt="printshop logo">
                         </a>
                     </div>	
                 </div>
@@ -132,11 +32,11 @@
                                
                             </li>
                             
-                            <li class="level0 hd-pd">
+                            <!-- <li class="level0 hd-pd">
                                 <a href="category_grid.html" title="Marketing">How it works</a>
-                            </li>
+                            </li> -->
                             <li class="level0 hd-pd">
-                                <a href="category_list.html" title="Postcards">Product News</a>
+                                <a href="{{route('blog.index')}}" title="Postcards">Product News</a>
                             </li> 
                             <li class="level0 hd-pd" title="About Us">
                                 <a href="{{route('contact')}}">Contact Us</a>

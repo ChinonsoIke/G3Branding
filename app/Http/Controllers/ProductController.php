@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function categoryindex()
     {
         $categories = Category::all();
-        $products = Product::where("id","<>","")->paginate(6);
+        $products = Product::where("id","<>","")->paginate(12);
         //dd($products);
         return view('products.index',compact("categories","products"));
     }
@@ -24,5 +24,13 @@ class ProductController extends Controller
         $product = Product::find($request->id);
         
         return view('products.detail',compact("categories","product"));
+    }
+
+    public function getCategory($id) {
+        $category= Category::find($id);
+        $categories = Category::all();
+
+
+        return view('category.index', ['category'=>$category, 'categories'=>$categories]);
     }
 }

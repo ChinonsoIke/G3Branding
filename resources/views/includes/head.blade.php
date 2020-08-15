@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Printing theme - Home page</title>
+<title>G3Branding</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"/>
 <meta name="description" content="Printing template">
 <meta name="author" content="Netbase">

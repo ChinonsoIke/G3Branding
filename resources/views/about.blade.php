@@ -27,13 +27,13 @@
         <section id="aboutus" class="pr-main">
 			<div class="container">			
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<img src="images/about.fw.png">
+					<img src="images/aframes.png">
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<div class="top"><h2><span>Welcome at our Agency</span></h2>
-					<p>Here at printshop we like to describe ourselves as an easy-to-use online print destination that puts the power back in your hands. You can mix ‘n’ match your size, papers and finishes to suit your designs — because print shouldn’t be one size fits all.</p>
+					<p>Here at G3Branding we like to describe ourselves as an easy-to-use print destination that puts the power back in your hands. You can mix ‘n’ match your size, papers and finishes to suit your designs — because print shouldn’t be one size fits all.</p>
 					</div>
-					<div class="bottom">
+					<!-- <div class="bottom">
 					<h2><span>Our specialization</span></h2>
 					</div>
 					<div class="progress">
@@ -55,9 +55,9 @@
 					  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 77%">
 						<span>HTML</span>
 					  </div>
-					</div>
+					</div> -->
 				</div>
-				<div class="col-md-12 col-sm-12 col-xs-12">
+				<!-- <div class="col-md-12 col-sm-12 col-xs-12">
 					<h1>MEET THE TEAM</h1>
 					<p>We’re passionate about print, but what does that mean for you? It’s a promise that you’ll always receive </p>
 					<p>print created on a press that sits at the very forefront of printing technology.</p>
@@ -85,7 +85,7 @@
 					<p>
                                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  </p>
 					</div></div>
-				</div>
+				</div> -->
 			</div>
 		</section>
 

@@ -61,6 +61,10 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h2>More Information About Order</h2>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Quantity: <span class="float-right">{{$order->quantity}}</span></li>
+                                        <li class="list-group-item">Total: <span class="float-right">&#8358; {{$order->total}}</span></li>
+                                    </ul>
                                     {!! $order->additional_information !!}
                                 </div>
                             </div>

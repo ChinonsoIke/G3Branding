@@ -7,6 +7,7 @@
     </head>
     <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
         @include('includes.header')
+        @include('includes.alert')
         @yield('content')
         @include('includes.footer')
         @stack('page-script')

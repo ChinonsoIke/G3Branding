@@ -4,30 +4,87 @@
 @endpush
 @section('content')
     <main class="main index">
-        @include('includes.slider')
+		<section class="home-slidershow">
+			<div class="slide-show">
+				<div class="vt-slideshow">
+					<ul>
+						<li class="slide1" data-transition="random" ><img src="{{asset("image/homeflier2.png")}}" alt="" />
+							<div class="tp-caption lfr" data-x="right"  data-hoffset="-56" data-y="170" data-start="800" data-speed="2000" data-endspeed="300"><span class="style1"><span class="textcolor">Flyers</span> & Leaflets</span></div> 
+							<div class="tp-caption lfb" data-x="right"  data-hoffset="-15" data-y="225" data-start="800" data-speed="2000" data-endspeed="300">
+								<span class="style2">
+									Our A5 flyers and leaflets are our bestselling size.<br> 
+									This is because they're perfect for potential prospects<br>  
+									to carry around and are extremely cost effective.<br> 
+								</span>
+							</div>
+							<div class="tp-caption lfr" data-x="right" data-hoffset="-315" data-y="375" data-start="1300" data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="categories/2">order now</a></div> 
+						</li>
+						<li class="slide1" data-transition="random" ><img src="{{asset("image/card5.png")}}" alt="" />
+							<div class="tp-caption lfr" data-x="right"  data-hoffset="-56" data-y="170" data-start="800" data-speed="2000" data-endspeed="300"><span class="style1"><span class="textcolor">business</span> cards</span></div> 
+							<div class="tp-caption lfb" data-x="right"  data-hoffset="-15" data-y="225" data-start="800" data-speed="2000" data-endspeed="300"
+							>
+								<span class="style2">
+									Your business card is a key part of your brand identity<br>
+									Define your brand identity with G3Branding.<br>
+								</span>
+							</div>
+							<div class="tp-caption lfr" data-x="right" data-hoffset="-315" data-y="375" data-start="1300" data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="categories/17">order now</a></div> 
+						</li>
+						<li class="slide2" data-transition="random" ><img src="{{asset("image/homeshirt1.png")}}" alt="" />
+							<div class="tp-caption lfr" data-x="left"  data-hoffset="" data-y="170" data-start="800" data-speed="2000" data-endspeed="300"><span class="style1"><span class="textcolor">High Pressure</span> Printing </span></div> 
+							<div class="tp-caption lfb" data-x="left"  data-hoffset="" data-y="225" data-start="800" data-speed="2000" data-endspeed="300">
+								<span class="style2">
+									We can print directly on your T-Shirts and other fabrics.<br> 
+									We make use of quality machines that ensure the design is to your taste<br>
+								</span>
+							</div>
+							<div class="tp-caption lfr" data-x="left" data-y="367" data-start="1300" data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="categories/15">order now</a></div> 
+						</li>
+						<li class="slide3" data-transition="random" ><img src="{{asset("image/gift2.png")}}" alt="" />
+							<div class="tp-caption lft" data-x="left"  data-hoffset="" data-y="170" data-start="800" data-speed="2000" data-endspeed="300"><span class="style1"><span class="textcolor">Gift</span> Items</span></div> 
+							<div class="tp-caption lfb" data-x="left"  data-hoffset="" data-y="225" data-start="800" data-speed="2000" data-endspeed="300">
+								<span class="style2">
+									Get customized gift items for your loved ones today!<br> 
+								</span>
+							</div>
+							<div class="tp-caption lfl" data-x="left" data-hoffset="" data-y="365" data-start="1300" data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="categories/16">order now</a></div> 
+						</li>
+					</ul> 
+				</div>
+			</div>
+		</section>
         <!--Home Category-->
         <!--Home Category : Begin-->
 		<section class="home-category">
 			<div class="container">
 				<div class="row"> 
-					@php
-						$count = 0;
-					@endphp
-					@if (count($categories) >= 4)
-					
-						@foreach ($categories as $item)
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-left">
-							<a href="#" class="image">
-								<img src="uploads/categories/{{$item->image}}" alt="banner-category"/>
-							</a>
-							<div class="info">
-								<a href="#">{{$item->title}}</a>
-							</div>
-						</div>
-						@endforeach
+					<div class="block-title-w">
+						<h2 class="block-title">CATEGORIES</h2>
+						<span class="icon-title">
+							<span></span>
+							<i class="fa fa-star"></i>
+						</span> 
+					</div><!--make print Title : End -->
+					<div class="print-content">
+						@php
+							$count = 0;
+						@endphp
+						@if (count($categories) >=3)
 						
-				
-					@endif
+							@foreach ($categories as $item)
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 block block-left cat_section">
+								<a href="{{route('category.index', $item->id)}}" class="image">
+									<img src="uploads/categories/{{$item->image}}" alt="banner-category"/>
+								</a>
+								<div class="info">
+									<a href="{{route('category.index', $item->id)}}">{{$item->title}}</a>
+								</div>
+							</div>
+							@endforeach
+							
+					
+						@endif
+					</div>
 				</div>
 			</div>
 		</section>
@@ -35,44 +92,44 @@
 		<section class="trust-w hidden-xs">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3 col-sm-6 block-trust trust-col-quantity">
+					<div class="col-md-3 col-sm-6 col-xs-6 trust-col-quantity">
 						<div class="tr-icon"><i class="fa fa-thumbs-up"></i></div>
 						<div class="tr-text">
 							<h3>Quality Printing</h3>
 							<span class="tr-line"></span>
 							<p>Bright inks. Thick Paper. Precise cuts. We believe that quality printing matters.  That quality printing matters.</p>
-							<a href="#" class="btn-readmore" title="Quality Printing">Read more</a>
+							
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 block-trust trust-col-time-delivery">
+					<div class="col-md-3 col-sm-6 col-xs-6 trust-col-time-delivery">
 						<div class="tr-icon"><i class="fa fa-paper-plane"></i></div>
 						<div class="tr-text">
 							<h3>Timely Delivery</h3>
 							<span class="tr-line"></span>
-							<p>No printer is faster. Order today by 8:00pm EST and you can even get it tomorrow.</p>
-							<a href="#" class="btn-readmore" title="Timely Delivery">Read more</a>
+							<p>No printer is faster. Order today and get your items within 3 working days</p>
+							
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 block-trust trust-col-eco-minded">
+					<div class="col-md-3 col-sm-6 col-xs-6 trust-col-eco-minded">
 						<div class="tr-icon"><i class="fa fa-leaf"></i></div>
 						<div class="tr-text">
 							<h3>Eco-Minded</h3>
 							<span class="tr-line"></span>
 							<p>
-								Overnight Prints is the greenest online printer in the world. See our Waterless technology. 
+								At G3Branding, we make use of eco-friendly machines.
 							</p>
-							<a href="#" class="btn-readmore" title="Eco-Minded">Read more</a>
+							
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 block-trust trust-col-eco-money">
+					<div class="col-md-3 col-sm-6 col-xs-6 trust-col-eco-money">
 						<div class="tr-icon"><i class="fa fa-money"></i></div>
 						<div class="tr-text">
-							<h3>Money Back Guaranteed</h3>
+							<h3>Customer Satisfaction</h3>
 							<span class="tr-line"></span>
 							<p>
-								Most sellers work with buyers to quickly resolve issues, but if a solution isn't reached, we can help.
+								We keep our customers involved throughout the branding process to ensure the desired result.
 							</p>
-							<a href="#" class="btn-readmore" title="Eco-Minded">Read more</a>
+							
 						</div>
 					</div>
 				</div>
@@ -103,14 +160,9 @@
 											</a>
 											<div class="info">
 												<div class="title">
-													<a href="#">{{$item->title}}</a>
+													<a href="{{route('blog.show', $item->id)}}">{{$item->title}}</a>
 												</div>
-												<div class="sub-title">
-													<p>
-														{{$item->slug()}}
-													</p>
-												</div>
-												<a href="#" class="read-more">Read more</a>
+												<a href="{{route('blog.show', $item->id)}}" class="read-more">Read more</a>
 											</div>
 										</div>
 									</div>
@@ -157,7 +209,7 @@
 								</div>
 								<div class="print-txt">
 									@inlineEditor('home_print_1_text')
-									<p>Choose options that you want for your prints.We will make you happy with your choices.</p>
+									<p>Choose options that you want for your prints. We will make you happy with your choices.</p>
 									@endInlineEditor
 								</div>
 							</div>
@@ -210,12 +262,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="bg_make_print">
+			<!-- <div class="bg_make_print"> -->
 				
 			</div>
 		</section>
 		<!--Home capabilitie : Begin -->
-		<section class="home-capabititie">
+		<!-- <section class="home-capabititie">
 			<div class="container">
 				<div class="row">
 					<div class="block-title-w">
@@ -278,9 +330,9 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!--Home ours service : Begin -->
-		<section class="or-service">
+		<!-- <section class="or-service">
 			<div class="container">
 				<div class="row">
 					<div class="block-title-w">
@@ -396,7 +448,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		{{--<!--Home out recent : Begin -->
 		<section class="home-out-recent">
 			<div class="container">
@@ -1305,7 +1357,7 @@
 			</div>
 		</section>--}}
 		<!--Home Testimonials : Begin -->
-		<section class="home-testimonial">
+		<!-- <section class="home-testimonial">
 			<div class="container">
 				<div class="row">
 					<div class="tes-block" id="testimonial"> 
@@ -1400,7 +1452,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
         
     </main>
 @endsection

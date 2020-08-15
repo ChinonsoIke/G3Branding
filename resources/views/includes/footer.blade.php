@@ -6,23 +6,23 @@
                     <h2>About Us</h2>
                     <div class="footer-content">
                         <a href="index.html" title="Cmsmart logo footer" class="logo-footer">
-                            <img src="images/footer-logo.png" alt="logo footer">
+                            <img src="{{asset('images/footer-logo.png')}}" alt="logo footer">
                         </a>
                         <ul class="info">
                             <li>
                                 <i class="fa fa-home"></i>
-                                <span>102580 Santa Monica Los Angeles</span>
+                                <span>Block 26, Suite 22/23 LASDPC Housing Estate, Isolo, Lagos</span>
                             </li>
                             <li>
                                 <i class="fa fa-phone"></i>
-                                <span>+3 045 224 33 12 +3 045 224 48 00</span>
+                                <span> +234 08023701606</span>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <i class="fa fa-envelope-o"></i>
                                 <span><a href="mailto:info@cmsmart.net" title="send mail to Cmsmart">info@cmsmart.net</a></span>
-                            </li>
+                            </li> -->
                         </ul>
-                        <ul class="footer-social">
+                        <!-- <ul class="footer-social">
                             <li>
                                 <a href="#" title="Facebook">
                                     <i class="fa fa-facebook"></i>
@@ -38,7 +38,7 @@
                                     <i class="fa fa-google-plus"></i>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-12 corporate footer-col">
@@ -46,22 +46,7 @@
                     <div class="footer-content">
                         <ul>
                             <li>
-                                <a href="about-us.html" title="About us">About</a>
-                            </li>
-                            <li>
-                                <a href="cart.html" title="Green">Green</a>
-                            </li>
-                            <li>
-                                <a href="checkout.html" title="Afiliates">Afiliates</a>
-                            </li>
-                            <li>
-                                <a href="contact.html" title="Non-profits and Government">Non-profits and Government</a>
-                            </li>
-                            <li>
-                                <a href="detail.html" title="Terms of Service">Terms of Service</a>
-                            </li>
-                            <li>
-                                <a href="faq.html" title="Privacy Policy">Privacy Policy</a>
+                                <a href="/about" title="About us">About</a>
                             </li>
                         </ul>
                     </div>
@@ -71,19 +56,7 @@
                     <div class="footer-content">
                         <ul>
                             <li>
-                                <a href="myaccount-information.html" title="My Account">My Account</a>
-                            </li>
-                            <li>
-                                <a href="myaccount-dashboard.html" title="Design Guide">Design Guide</a>
-                            </li>
-                            <li>
-                                <a href="faq.html" title="FAQ">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="register.html" title="Design Service">Design Services</a>
-                            </li>
-                            <li>
-                                <a href="contact.html" title="Contact Us">Contact Us</a>
+                                <a href="/contact" title="Contact Us">Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -94,7 +67,7 @@
                         <p>
                             G3Branding provides fast online printing for both homes and businesses. We  provide high quality business cards, postcards, flyers, brochures, stationery and  other premium online print products.
                         </p>
-                        <img src="images/footer-payment.png" alt="Payment method">
+                        <!-- <img src="images/footer-payment.png" alt="Payment method"> -->
                     </div>
                 </div>
             </div>
@@ -213,7 +186,7 @@
 <script src="{{asset('js/jquery.uploader.js')}}"></script>
 {{-- Start Laravel Inline Editor Components --}}
 @include('laravel-inline-editor::html-manager')
-{{-- End Laravel Inline Editor Components --}}
+{{-- End Laravel Inline Editor Components --}}`
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]--> 
@@ -273,7 +246,7 @@
                 content : inlineEditor.attr("content")
             })
             
-          })
+          }) 
         })
   
         $("#applyChanges").on("click",function(){
